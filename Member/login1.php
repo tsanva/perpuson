@@ -112,7 +112,7 @@ include("includes/db.php");
                   </div>
 
                   <div class="form-group">
-                     <label for="phone">No Telfon - <small>Optional</small></label>
+                     <label for="phone">No Telfon</label>
                      <input type="text" name="phone" id="phone">
                   </div>
                   

@@ -105,14 +105,6 @@ session_start();
                 <?php mycart(); ?>
 
          
-        
-        <div align="right">
-            <!--<button class="btn"><input type="submit" value="Update" name="update_cart"/></button>-->
-            <button name="update_cart" type="submit" class="btn btn-danger">Hapus</button>
-           <!--<input type="submit" name="update_cart" value="update">-->
-           
-
-        </div>
                 </form>
    </tbody>
 
@@ -133,8 +125,6 @@ session_start();
     }
         ?>
 
-    <div class="container" align="right" ><h3> <a  style="text-decoration:none " href="checkout.php">Pinjam </a></h3>
-          </div>
 
 </body>
 
