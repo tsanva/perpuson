@@ -1,0 +1,4 @@
+1. ganti config mysql di
+    - /Admin/conf/db.php
+    - /Member/function/functions.php
+    - /Member/includes/db.php

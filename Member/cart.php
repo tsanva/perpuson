@@ -65,6 +65,11 @@ session_start();
                     ?>
                    
                     <li class="active"><a href="cart.php">Keranjang<span class="badge"><?php total_items(); ?></span></a></li>
+                    <?php
+                    if(isset($_SESSION['email'])){
+                    echo "<li><a href='list_pinjam.php'>Buku Dipinjam</a></li>";
+                    }
+                    ?>
                     
                 </ul>
                 <form action="results.php" method="get" class="navbar-form navbar-right">

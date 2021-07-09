@@ -59,8 +59,8 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="dataPinjam.html">Peminjaman</a>
-                                    <a class="nav-link" href="dataPengembalian.html">Pengembalian</a>
+                                    <a class="nav-link" href="dataPinjam.php">Peminjaman</a>
+                                    <a class="nav-link" href="dataPengembalian.php">Pengembalian</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -80,11 +80,11 @@
                                 Siswa
                             </a>
                             <!-- <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="charts.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Charts
                             </a>
-                            <a class="nav-link" href="tables.html">
+                            <a class="nav-link" href="tables.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
                             </a>
@@ -107,10 +107,16 @@
                                     
                                     $getData = "SELECT * FROM books";
                                     $getSiswa = "SELECT * FROM customer";
+                                    $getPinjam = "SELECT * FROM logs WHERE jenis = 'pinjam'";
+                                    $getKembali = "SELECT * FROM logs WHERE jenis = 'kembali'";
                                     $data_buku = mysqli_query($koneksi, $getData);
                                     $data_siswa = mysqli_query($koneksi, $getSiswa);
+                                    $data_pinjam = mysqli_query($koneksi, $getPinjam);
+                                    $data_kembali = mysqli_query($koneksi, $getKembali);
                                     $jumlah_barang = mysqli_num_rows($data_buku);
-                                    $jumlah_siswa = mysqli_num_rows($data_siswa)
+                                    $jumlah_siswa = mysqli_num_rows($data_siswa);
+                                    $jumlah_pinjam = mysqli_num_rows($data_pinjam);
+                                    $jumlah_kembali = mysqli_num_rows($data_kembali);
                                     ?>
                                     <div class="card-body">Total Buku: <?php echo $jumlah_barang; ?></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
@@ -130,7 +136,7 @@
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Peminjaman Hari Ini</div>
+                                    <div class="card-body">Peminjaman Hari Ini: <?php echo $jumlah_pinjam; ?></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">Lihat lebih lanjut</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -139,7 +145,7 @@
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Pengembalian Hari Ini</div>
+                                    <div class="card-body">Pengembalian Hari Ini:  <?php echo $jumlah_kembali; ?></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">Lihat lebih lanjut</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>

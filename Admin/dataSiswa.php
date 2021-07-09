@@ -19,7 +19,7 @@ session_start();
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Perpus.On</a>
+            <a class="navbar-brand ps-3" href="index.php">Perpus.On</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -48,7 +48,7 @@ session_start();
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Laporan</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -60,8 +60,8 @@ session_start();
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="dataPinjam.html">Peminjaman</a>
-                                    <a class="nav-link" href="dataPengembalian.html">Pengembalian</a>
+                                    <a class="nav-link" href="dataPinjam.php">Peminjaman</a>
+                                    <a class="nav-link" href="dataPengembalian.php">Pengembalian</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -71,28 +71,21 @@ session_start();
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="dataBuku.html">Daftar Buku</a>
-                                    <a class="nav-link" href="kategori.html">Kategori</a>
+                                    <a class="nav-link" href="dataBuku.php">Daftar Buku</a>
+                                    <a class="nav-link" href="kategori.php">Kategori</a>
                                 </nav>
 
                             </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseSiswa" aria-expanded="false" aria-controls="collapseSiswa">
+                            <a class="nav-link" href="dataSiswa.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
                                 Siswa
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapseSiswa" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="dataSiswa.html">Data Siswa</a>
-                                    <a class="nav-link" href="dataKelas.html">Kelas</a>
-                                </nav>
-                            </div>
                             <!-- <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="charts.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Charts
                             </a>
-                            <a class="nav-link" href="tables.html">
+                            <a class="nav-link" href="tables.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
                             </a>
@@ -105,7 +98,7 @@ session_start();
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Data Siswa</h1>
                         <ol class="breadcrumb mb-4">
-                            <!-- <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <!-- <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
                             <li class="breadcrumb-item active">Tables</li> -->
                         </ol>
                         <div class="card mb-4">
@@ -189,7 +182,7 @@ session_start();
                                             <td><?php echo $c['password'] ?></td>
                                             <td><?php echo $c['phone'] ?></td>
                                             <td>
-                                                <a href="hapusiswa.php?id=<?php echo $c['cust_id']; ?>"><button class="tmbl tmbl-masuk">Hapus</button></a> -- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Launch demo modal</button>
+                                                <a href="hapusiswa.php?id=<?php echo $c['cust_id']; ?>"><button class="tmbl tmbl-masuk">Hapus</button></a>
 
                                             </td>
                                         </tr>

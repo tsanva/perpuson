@@ -1,6 +1,9 @@
 <!doctype html>
 <?php include("function/functions.php");
+session_start();
+$email = $_SESSION["email"];
 ?>
+
 <html lang="en">
 
 <head>
@@ -64,7 +67,11 @@
                     ?>
                    
                     <li><a href="cart.php">Keranjang<span class="badge"><?php total_items(); ?></span></a></li>
-                    
+                    <?php
+                    if(isset($_SESSION['email'])){
+                    echo "<li><a href='list_pinjam.php'>Buku Dipinjam</a></li>";
+                    }
+                    ?>
                 </ul>
                 <form action="results.php" method="get" class="navbar-form navbar-right">
                     <div class="form-group label-floating">
@@ -81,47 +88,7 @@
     </nav>
 
     <!-- end navbar -->
-    <div class="container-fluid">
-
-       <div class="row">
-            <div class="col-md-12">
-                <div class="carousel slide multi-item-carousel" id="theCarousel">
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <div class="col-xs-4" id="bk1">
-                                <img src="assets/images/half%20gf.jpg">
-                                <div class="c-content "><b>Perahu Kertas</b><br> by Dewi Lestari<br><br>
-                                    <p>Novel Perahu Kertas dimulai dengan kisah seorang anak muda bernama Keenan. Ia seorang remaja yang baru saja menyelesaikan sekolah menengah atas-nya di Belanda, tepatnya di Amsterdam.</p>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-xs-4" id="bk2">
-                                <img src="assets/images/laskar.jpg">
-                                <div class="c-content "><b>Laskar Pelangi</b><br> by Andre Hirata<br><br> Laskar Pelangi adalah novel pertama karya Andrea Hirata yang diterbitkan oleh Bentang Pustaka pada tahun 2005. Novel ini bercerita tentang kehidupan 10 anak dari keluarga miskin yang bersekolah di sebuah sekolah Muhammadiyah di Belitung.
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-xs-4" id="bk3">
-                                <img src="assets/images/pemimpi.jpg">
-                                <div class="c-content "><b>Sang Pemimpi</b><br> by Andre Hirata<br><br> Novel Sang Pemimpi mengisahkan tentang suatu kehidupan tiga orang anak Melayu Belitong yakni Ikal, Arai, dan Jimbron yang sarat dengan tantangan, pengorbanan dan lika-liku kehidupan.
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
-                    <a class="right carousel-control" href="#theCarousel" data-slide="next"></a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php pop(); ?>
     <!--carousel end-->
 
 

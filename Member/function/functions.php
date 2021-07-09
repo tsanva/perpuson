@@ -1,5 +1,5 @@
 <?php
-$conn=mysqli_connect("localhost", "vasant", "password","ecom");
+$conn=mysqli_connect("localhost", "vasant", "password","perpuson");
 //$db=mysqli_select_db("ecom",$conn);	
 
 
@@ -194,30 +194,30 @@ function getbooks(){
 }
 
 
-function getpop()
-{
-  
-}
-
 function pop()
 {
   global $conn;
-  $result=mysqli_query($conn, );
+  $buku_pop=mysqli_query($conn, "SELECT book_id, author, title, image, description FROM books WHERE book_id = (SELECT id_buku FROM logs GROUP BY id_buku ORDER BY sum(banyak) DESC LIMIT 1)");
+  while($row=mysqli_fetch_array($buku_pop)) {
   echo "<div class='container'>
   <h2>Buku Terpopuler</h2>
       <div class='row'>
           <div class='col-md-12'>
               <div class='item active'>
                   <div class='col-md-12' id='bk1'>
-                      <img src='./assets/images/perahu.jpg'>
-                      <div class='c-content'><b>a</b><br> by Dewi Lestari <br><br>
-                      <p>Novel Perahu Kertas dimulai dengan kisah seorang anak muda bernama Keenan. Ia seorang remaja yang baru saja menyelesaikan sekolah menengah atas-nya di Belanda, tepatnya di Amsterdam.</p>
+                      <img src='./assets/images/".$row['image']."'>
+                      <div class='c-content'><b>".$row['title']."</b><br> by ".$row['author']." <br><br>
+                      <p>".$row['description']."</p>
                   </div>
+                  <a href='index.php?add_cart=".$row['book_id']."'><button class='buybtn btn btn-warning btn-round btn-sm'>
+                  Add <i class='material-icons'>add_shopping_cart</i>
+               </button></a>
               </div>
           </div> 
           </div>
       </div>
   </div>";
+  }
 }
 
 function get_bycat(){

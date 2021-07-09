@@ -90,21 +90,7 @@ $email = $_SESSION["email"];
 
 
     <!-- end navbar -->
-    <div class="container">
-    <h2>Buku Terpopuler</h2>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="item active">
-                    <div class="col-md-12" id="bk1">
-                        <img src="./assets/images/perahu.jpg">
-                        <div class="c-content "><b>Perahu Kertas</b><br> by Dewi Lestari <br><br>
-                        <p>Novel Perahu Kertas dimulai dengan kisah seorang anak muda bernama Keenan. Ia seorang remaja yang baru saja menyelesaikan sekolah menengah atas-nya di Belanda, tepatnya di Amsterdam.</p>
-                    </div>
-                </div>
-            </div> 
-            </div>
-        </div>
-    </div>
+    <?php pop(); ?>
     <!--carousel end-->
 
 

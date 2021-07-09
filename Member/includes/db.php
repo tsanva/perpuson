@@ -1,4 +1,4 @@
 <?php
-$con=mysqli_connect("localhost", "vasant", "password","ecom");
+$con=mysqli_connect("localhost", "vasant", "password","perpuson");
 
 ?>
