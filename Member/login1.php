@@ -184,7 +184,7 @@ include("includes/db.php");
                 $sel_c="select * from customer where password='$pass' AND email='$email'";
                 $run_c=mysqli_query($conn,$sel_c);
                 $check_customer=mysqli_num_rows($run_c);
-                if($check_customer==0)
+                if(!$check_customer)
                 {
                     echo "<script>alert('Email atau Password salah!')</script>";
                 }
@@ -192,12 +192,12 @@ include("includes/db.php");
           //          $get_items="SELECT * FROM `cart` WHERE `ip_add`='$ip'";
           //          $run=mysqli_query($conn, $get_items);
           //          $check_cart = mysqli_num_rows($run);
-          //          if($check_customer>0 AND $check_cart>0){
+                   if($check_customer){
           //              
                          $_SESSION['email']=$email;
                            echo "<script>alert('Berhasil Masuk!')</script>";
                         echo "<script>window.open('index.php','_self')</script>";
-          //          }
+                    }
         //             if($check_customer>0 AND $check_cart==0){
         //                     $_SESSION['email']=$email;
         //                   echo "<script>alert('Gagal m')</script>";
