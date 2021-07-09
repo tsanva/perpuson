@@ -1,0 +1,38 @@
+.form_button {
+  font: 500 1rem sans-serif;
+}
+
+.form_button {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--border-radius);
+  outline: none;
+  cursor: pointer;
+  background: var(--color-primary);
+}
+
+.form_button:hover {
+  background: var(--color-primary-dark);
+}
+
+.form_button:active {
+  transform: scale(0.98);
+}
+
+.form_teks {
+  text-align: center;
+}
+
+.form_link {
+  color: var(--color-secondary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form_link:hover {
+  text-decoration: underline;
+}
